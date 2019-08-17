@@ -21,7 +21,7 @@ import org.openqa.selenium.WebDriver;
    private String userName="Madison Ella Smith";
 
 @Test
- public void loginTest(){
+ public void validLoginTest(){
     loginSteps.navigateToLoginPage();
     loginSteps.performLogin(userEmail, userPass);
     loginSteps.checkLoggedIn(userName);
