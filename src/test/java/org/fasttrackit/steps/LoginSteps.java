@@ -4,6 +4,7 @@ import net.thucydides.core.annotations.Step;
 import org.fasttrackit.pages.AccountPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
+import org.fasttrackit.pages.SearchResultsPage;
 import org.junit.Assert;
 
 public class LoginSteps {
@@ -23,12 +24,19 @@ public class LoginSteps {
         loginPage.setEmailField(email);
         loginPage.setPassField(pass);
         loginPage.clickLoginButton();
+
     }
 
     @Step
     public void checkLoggedIn(String userName) {
         Assert.assertTrue(accountPage.isLoggedIn(userName));
     }
+
+    @Step
+    public void checkNotLoggedIn(){
+        loginPage.verifyNotLoggedIn();
+    }
+
 
 
 

@@ -13,6 +13,8 @@ public class LoginPage extends PageObject {
     private WebElementFacade passField;
     @FindBy(id="send2")
     private WebElementFacade loginButton;
+    @FindBy(css=".error-msg span")
+    private WebElementFacade errorLoginMessage;
 
     public void setEmailField(String email) {
         typeInto(emailField,email);
@@ -23,5 +25,8 @@ public class LoginPage extends PageObject {
     }
     public void clickLoginButton(){
         clickOn(loginButton);
+    }
+    public void verifyNotLoggedIn(){
+        errorLoginMessage.shouldContainText("Invalid login or password.");
     }
 }

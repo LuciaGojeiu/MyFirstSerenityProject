@@ -12,11 +12,22 @@ import net.thucydides.core.annotations.DefaultUrl;
       @FindBy(css = "a[title='Log In']")
       private WebElementFacade loginLink;
 
+      @FindBy(id="search")
+      private WebElementFacade searchField;
+      @FindBy(css="button[title=Search]")
+      private WebElementFacade searchButton;
+
       public void clickAccount(){
           clickOn(accountLink);
       }
       public void clickLogin(){
           clickOn(loginLink);
+      }
+      public void setSearchField(String keyword){
+          typeInto(searchField,keyword);
+      }
+      public void clickSearchButton(){
+          clickOn(searchButton);
       }
 
 

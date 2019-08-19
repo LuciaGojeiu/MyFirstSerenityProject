@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.LoginSteps;
+import org.fasttrackit.utils.Constants;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +17,17 @@ import org.openqa.selenium.WebDriver;
 @Steps
     private LoginSteps loginSteps;
 
-   private String userEmail="madisonqa16@gmail.com";
-   private String userPass="123abc";
-   private String userName="Madison Ella Smith";
-
 @Test
  public void validLoginTest(){
     loginSteps.navigateToLoginPage();
-    loginSteps.performLogin(userEmail, userPass);
-    loginSteps.checkLoggedIn(userName);
+    loginSteps.performLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+    loginSteps.checkLoggedIn(Constants.USER_NAME);
    }
 
+  @Test
+  public void invalidLoginTest(){
+      loginSteps.navigateToLoginPage();
+      loginSteps.performLogin(Constants.USER_EMAIL,"aaaaaaa");
+      loginSteps.checkNotLoggedIn();
+  }
 }
