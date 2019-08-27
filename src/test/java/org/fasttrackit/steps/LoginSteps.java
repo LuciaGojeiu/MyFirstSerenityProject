@@ -4,7 +4,6 @@ import net.thucydides.core.annotations.Step;
 import org.fasttrackit.pages.AccountPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
-import org.fasttrackit.pages.SearchResultsPage;
 import org.junit.Assert;
 
 public class LoginSteps {
@@ -14,13 +13,14 @@ public class LoginSteps {
     private AccountPage accountPage;
 
     @Step
-    public void navigateToLoginPage(){
+    public void navigateToLoginPage() {
         homePage.open();
         homePage.clickAccount();
         homePage.clickLogin();
     }
+
     @Step
-    public void performLogin(String email, String pass){
+    public void performLogin(String email, String pass) {
         loginPage.setEmailField(email);
         loginPage.setPassField(pass);
         loginPage.clickLoginButton();
@@ -33,11 +33,9 @@ public class LoginSteps {
     }
 
     @Step
-    public void checkNotLoggedIn(){
+    public void checkNotLoggedIn() {
         loginPage.verifyNotLoggedIn();
     }
-
-
 
 
 }

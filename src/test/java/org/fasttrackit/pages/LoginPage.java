@@ -7,26 +7,28 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://fasttrackit.org/selenium-test/customer/account/login/")
 public class LoginPage extends PageObject {
-    @FindBy(id="email")
+    @FindBy(id = "email")
     private WebElementFacade emailField;
-    @FindBy(id="pass")
+    @FindBy(id = "pass")
     private WebElementFacade passField;
-    @FindBy(id="send2")
+    @FindBy(id = "send2")
     private WebElementFacade loginButton;
-    @FindBy(css=".error-msg span")
+    @FindBy(css = ".error-msg span")
     private WebElementFacade errorLoginMessage;
 
     public void setEmailField(String email) {
-        typeInto(emailField,email);
+        typeInto(emailField, email);
     }
 
-    public void setPassField(String pass){
+    public void setPassField(String pass) {
         typeInto(passField, pass);
     }
-    public void clickLoginButton(){
+
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
-    public void verifyNotLoggedIn(){
+
+    public void verifyNotLoggedIn() {
         errorLoginMessage.shouldContainText("Invalid login or password.");
     }
 }

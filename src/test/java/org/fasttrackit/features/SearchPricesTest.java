@@ -23,7 +23,7 @@ public class SearchPricesTest {
     }
 
     @Test
-    public void SearchPricesTest() {
+    public void searchPricesTest() {
         searchSteps.navigateToHomePage();
         searchSteps.searchForKeyword(keyword);
         searchSteps.sortByPrice();

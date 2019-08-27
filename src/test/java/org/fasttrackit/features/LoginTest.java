@@ -10,24 +10,24 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-  public class LoginTest {
+public class LoginTest {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
-@Steps
+    @Steps
     private LoginSteps loginSteps;
 
-@Test
- public void validLoginTest(){
-    loginSteps.navigateToLoginPage();
-    loginSteps.performLogin(Constants.USER_EMAIL, Constants.USER_PASS);
-    loginSteps.checkLoggedIn(Constants.USER_NAME);
-   }
+    @Test
+    public void validLoginTest() {
+        loginSteps.navigateToLoginPage();
+        loginSteps.performLogin(Constants.USER_EMAIL, Constants.USER_PASS);
+        loginSteps.checkLoggedIn(Constants.USER_NAME);
+    }
 
-  @Test
-  public void invalidLoginTest(){
-      loginSteps.navigateToLoginPage();
-      loginSteps.performLogin(Constants.USER_EMAIL,"aaaaaaa");
-      loginSteps.checkNotLoggedIn();
-  }
+    @Test
+    public void invalidLoginTest() {
+        loginSteps.navigateToLoginPage();
+        loginSteps.performLogin(Constants.USER_EMAIL, "aaaaaaa");
+        loginSteps.checkNotLoggedIn();
+    }
 }

@@ -11,28 +11,61 @@ public class SearchSteps {
     private SearchResultsPage searchResultsPage;
 
     @Step
-    public void navigateToHomePage(){
+    public void navigateToHomePage() {
         homePage.open();
     }
 
     @Step
-    public void searchForKeyword(String keyword){
+    public void searchForKeyword(String keyword) {
         homePage.setSearchField(keyword);
         homePage.clickSearchButton();
     }
 
     @Step
-    public void verifySearchedProductInResults(String productName){
-        Assert.assertTrue("Product not in the list.",searchResultsPage.isProductOnPage(productName));
+    public void verifySearchedProductInResults(String productName) {
+        Assert.assertTrue("Product not in the list.", searchResultsPage.isProductOnPage(productName));
     }
 
     @Step
-    public void sortByPrice(){
+    public void sortByPrice() {
         searchResultsPage.sortProductsByPrice();
     }
 
     @Step
-    public void verifyPriceComparison(){
-        Assert.assertTrue("Price are not ordered in ascending order",searchResultsPage.pricesComparison());
+    public void verifyPriceComparison() {
+        Assert.assertTrue("Price are not ordered ascending.", searchResultsPage.pricesComparison());
+    }
+
+    @Step
+    public void searchForKeyword1(String keyword1) {
+        homePage.setSearchField(keyword1);
+        homePage.clickSearchButton();
+    }
+
+    @Step
+    public void searchForKeyword2(String keyword2) {
+        homePage.setSearchField(keyword2);
+        homePage.clickSearchButton();
+    }
+
+    @Step
+    public void searchForKeyword3(String keyword3) {
+        homePage.setSearchField(keyword3);
+        homePage.clickSearchButton();
+    }
+
+    @Step
+    public void viewDetailsProduct1() {
+        searchResultsPage.clickViewDetailsButtonProduct1();
+    }
+
+    @Step
+    public void viewDetailsProduct2() {
+        searchResultsPage.clickViewDetailsButtonProduct2();
+    }
+
+    @Step
+    public void viewDetailsProduct3() {
+        searchResultsPage.clickViewDetailsButtonProduct3();
     }
 }
