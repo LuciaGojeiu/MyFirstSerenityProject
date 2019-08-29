@@ -52,6 +52,8 @@ public class CartPage extends PageObject {
     }
 
     public boolean verifySumOfPrices() {
-        return sumOfPricesInt == pricesSubtotalInt;
+        if(sumOfPricesInt == pricesSubtotalInt){
+            return true;
+        }else return false;
     }
 }
