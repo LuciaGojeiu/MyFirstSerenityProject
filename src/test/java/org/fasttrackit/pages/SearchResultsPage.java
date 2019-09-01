@@ -16,18 +16,16 @@ public class SearchResultsPage extends PageObject {
     private List<WebElementFacade> listOfProducts;
     @FindBy(css = ".category-products >.toolbar > .sorter > div select")
     private WebElementFacade sortByDrpList;
-    @FindBy(id = "product-minimal-price-555")
+    @FindBy(css = ".category-products .item:first-child .price")
     private WebElementFacade firstProductPrice;
-    @FindBy(id = "product-price-424")
+    @FindBy(css = ".category-products .item:last-child .price")
     private WebElementFacade lastProductPrice;
+
+    @FindBy(css = ".item:first-child a[title='View Details']")
+    private WebElementFacade viewDetailsButton;
+
     private String firstProdPrice;
     private String lastProdPrice;
-    @FindBy(css = "a.button[href*='core-striped-sport-shirt']")
-    private WebElementFacade viewDetailsButtonProduct1;
-    @FindBy(css = "a.button[href*='ludlow-sheath-dress']")
-    private WebElementFacade viewDetailsButtonProduct2;
-    @FindBy(css = "a.button[href*='essex-pencil-skirt']")
-    private WebElementFacade viewDetailsButtonProduct3;
 
     public boolean isProductOnPage(String productName) {
         for (WebElementFacade element : listOfProducts) {
@@ -57,19 +55,9 @@ public class SearchResultsPage extends PageObject {
         return Integer.valueOf(firstProdPrice) < Integer.valueOf(lastProdPrice);
     }
 
-    public void clickViewDetailsButtonProduct1() {
-        clickOn(viewDetailsButtonProduct1);
+    public void clickViewDetailsButton() {
+        clickOn(viewDetailsButton);
     }
-
-    public void clickViewDetailsButtonProduct2() {
-        clickOn(viewDetailsButtonProduct2);
-    }
-
-    public void clickViewDetailsButtonProduct3() {
-        clickOn(viewDetailsButtonProduct3);
-    }
-
-
 }
 
 

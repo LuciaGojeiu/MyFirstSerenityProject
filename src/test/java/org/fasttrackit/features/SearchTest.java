@@ -10,12 +10,14 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class SearchPricesTest {
+public class SearchTest {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
     private SearchSteps searchSteps;
+
     private String keyword = "necklace";
+    private String productName = "SILVER DESERT NECKLACE";
 
     @Before
     public void maximizeWindow() {
@@ -23,13 +25,16 @@ public class SearchPricesTest {
     }
 
     @Test
+    public void searchProductTest() {
+        searchSteps.navigateToHomePage();
+        searchSteps.searchForKeyword(keyword);
+        searchSteps.verifySearchedProductInResults(productName);
+    }
+    @Test
     public void searchPricesTest() {
         searchSteps.navigateToHomePage();
         searchSteps.searchForKeyword(keyword);
         searchSteps.sortByPrice();
         searchSteps.verifyPriceComparison();
-
     }
-
-
 }

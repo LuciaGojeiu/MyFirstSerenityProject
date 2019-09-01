@@ -12,21 +12,19 @@ public class CartSteps {
 
     @Step
     public void addToCartProduct1() {
-        viewDetailsPage.chooseProduct1Color();
+        viewDetailsPage.chooseProductColor();
         viewDetailsPage.chooseProduct1Size();
         viewDetailsPage.clickAddToCartButton();
     }
 
     @Step
     public void addToCartProduct2() {
-        viewDetailsPage.chooseProduct2Color();
-        viewDetailsPage.chooseProduct2Size();
         viewDetailsPage.clickAddToCartButton();
     }
 
     @Step
     public void addToCartProduct3() {
-        viewDetailsPage.chooseProduct3Color();
+        viewDetailsPage.chooseProductColor();
         viewDetailsPage.chooseProduct3Size();
         viewDetailsPage.clickAddToCartButton();
     }

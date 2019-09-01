@@ -55,17 +55,9 @@ public class SearchSteps {
     }
 
     @Step
-    public void viewDetailsProduct1() {
-        searchResultsPage.clickViewDetailsButtonProduct1();
-    }
-
-    @Step
-    public void viewDetailsProduct2() {
-        searchResultsPage.clickViewDetailsButtonProduct2();
-    }
-
-    @Step
-    public void viewDetailsProduct3() {
-        searchResultsPage.clickViewDetailsButtonProduct3();
+    public void viewDetailsProduct() {
+        searchResultsPage.clickViewDetailsButton();
     }
 }
+
+

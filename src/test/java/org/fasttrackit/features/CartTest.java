@@ -21,7 +21,7 @@ public class CartTest {
     @Steps
     private CartSteps cartSteps;
     private String keyword1 = "shirt";
-    private String keyword2 = "dress";
+    private String keyword2 = "necklace";
     private String keyword3 = "skirt";
 
     @Before
@@ -33,13 +33,13 @@ public class CartTest {
     public void cartTest() {
         searchSteps.navigateToHomePage();
         searchSteps.searchForKeyword1(keyword1);
-        searchSteps.viewDetailsProduct1();
+        searchSteps.viewDetailsProduct();
         cartSteps.addToCartProduct1();
         searchSteps.searchForKeyword2(keyword2);
-        searchSteps.viewDetailsProduct2();
+        searchSteps.viewDetailsProduct();
         cartSteps.addToCartProduct2();
         searchSteps.searchForKeyword3(keyword3);
-        searchSteps.viewDetailsProduct3();
+        searchSteps.viewDetailsProduct();
         cartSteps.addToCartProduct3();
         cartSteps.verifyProductsPricesTotal();
     }
