@@ -30,7 +30,7 @@ public class CartTest {
     }
 
     @Test
-    public void cartTest() {
+    public void cartSummaryTest() {
         searchSteps.navigateToHomePage();
         searchSteps.searchForKeyword1(keyword1);
         searchSteps.viewDetailsProduct();

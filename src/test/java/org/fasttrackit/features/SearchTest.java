@@ -31,7 +31,7 @@ public class SearchTest {
         searchSteps.verifySearchedProductInResults(productName);
     }
     @Test
-    public void searchPricesTest() {
+    public void searchByPricesTest() {
         searchSteps.navigateToHomePage();
         searchSteps.searchForKeyword(keyword);
         searchSteps.sortByPrice();
